@@ -1,32 +1,32 @@
 # zao-harness
 
-One setup for every ZAO dev and agent: the ZAO rules, skills and tools, ready in Claude Code or Codex.
+The ZAO's guide to coding harnesses: the setups people use to run AI coding agents, with links to each one, so you can pick the one that fits you.
+
+This repo is the info hub. It does not hold the harnesses themselves: each one lives in its own repo, and this page links out to it. Everything here is built in public.
+
+## Pick a harness
+
+| Harness | Built by | What it is | Good if you | Link |
+|---|---|---|---|---|
+| zorca on Orca | Zaal | Zaal's operating layer on top of Orca: a playbook with safety rails, a task board, and the tools he runs The ZAO with | want the setup The ZAO runs on, many agents at once | [bettercallzaal/zorca](https://github.com/bettercallzaal/zorca) |
+| Orca | Stably | Free MIT app that runs Claude Code, Codex and others side by side, each in its own git worktree | want many agents in parallel with a GUI | [stablyai/orca](https://github.com/stablyai/orca) |
+| Claude Code + ZAO rules | The ZAO | Claude Code in the terminal with this repo's `CLAUDE.md`, `AGENTS.md` and skills | want one agent, simple, in the terminal | [install below](#zao-rules-for-any-harness) |
+| Codex + ZAO rules | The ZAO | OpenAI's Codex CLI reading the same `AGENTS.md` | already pay for ChatGPT | [install below](#zao-rules-for-any-harness) |
+
+Built your own harness or a workflow that works? Add a row: open a PR that adds it to this table (name, who built it, one line on what it is, who it suits, link). Or open an issue and we add it.
+
+How to choose: [docs/choose-a-harness.md](docs/choose-a-harness.md). The one-download plan for newcomers: [docs/zao-orca.md](docs/zao-orca.md).
 
 ## What would you want in your ideal harness?
-That is the one question this repo starts from. Open an issue with your answer, or send a PR. The tools you wish every session started with, the rules that saved you, the skills you keep rewriting: all of it counts.
-Plan: [ZAOresearch doc 1969](https://github.com/ZAODEVZ/ZAOresearch/pull/30).
+That is the question this repo started from. Open an issue with your answer: the tools you wish every session started with, the rules that saved you, the skills you keep rewriting. Plan: [ZAOresearch doc 1969](https://github.com/ZAODEVZ/ZAOresearch/pull/30).
 
-## Main harness right now
-We run [zorca](https://github.com/bettercallzaal/zorca) on [Orca](https://orca.stably.ai) as our main harness. Good workflows on other harnesses (Codex, Cursor, Claude Code alone, anything) are welcome from the community: open an issue or a PR.
-
-ZAO Orca, the one-download version: [docs/zao-orca.md](docs/zao-orca.md).
-
-## Install
-Clone this repo, then from the ZAO repo you are working in:
+## ZAO rules for any harness
+Whatever harness you pick, these files make the agent follow The ZAO's rules. Clone this repo, then from the ZAO repo you are working in:
 
 - Windows (PowerShell): `..\zao-harness\scripts\install.ps1`
 - Mac / Linux: `../zao-harness/scripts/install.sh`
 
 It copies `CLAUDE.md`, `AGENTS.md` and `.claude/skills/` into that repo (it never overwrites a file that is already there).
-
-## What is in it (build order)
-| Step | What | Status |
-|---|---|---|
-| 1 | Rules (`CLAUDE.md`, `AGENTS.md`) + skills | started |
-| 2 | MCP pack: Context7, Chrome DevTools, defuddle (`.mcp.json`) | next |
-| 3 | Many agents, one repo: claims file + commit trailer | later |
-| 4 | Auto-research bot: link in on Telegram, PR to ZAOresearch out | later |
-| 5 | Content lane: Kokoro voice, Remotion, MotionClone test | later |
 
 ## Contact
 The ZAO: info@thezao.com. MIT licensed, see LICENSE.
