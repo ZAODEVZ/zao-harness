@@ -6,6 +6,11 @@ One setup for every ZAO dev and agent: the ZAO rules, skills and tools, ready in
 That is the one question this repo starts from. Open an issue with your answer, or send a PR. The tools you wish every session started with, the rules that saved you, the skills you keep rewriting: all of it counts.
 Plan: [ZAOresearch doc 1969](https://github.com/ZAODEVZ/ZAOresearch/pull/30).
 
+## Main harness right now
+We run [zorca](https://github.com/bettercallzaal/zorca) on [Orca](https://orca.stably.ai) as our main harness. Good workflows on other harnesses (Codex, Cursor, Claude Code alone, anything) are welcome from the community: open an issue or a PR.
+
+ZAO Orca, the one-download version: [docs/zao-orca.md](docs/zao-orca.md).
+
 ## Install
 Clone this repo, then from the ZAO repo you are working in:
 
