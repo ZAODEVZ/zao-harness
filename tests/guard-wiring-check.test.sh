@@ -15,7 +15,7 @@ setup() {
 }
 
 expect() { # expect <label> <want-exit> <want-grep>
-  out=$(bash "$check" main --strict 2>&1); code=$?
+  out=$(GITHUB_ACTIONS= bash "$check" main --strict 2>&1); code=$?
   if [ "$code" -ne "$2" ] || ! grep -q -- "$3" <<< "$out"; then
     echo "FAIL $1 (exit $code)"; echo "$out"; fail=1
   else
