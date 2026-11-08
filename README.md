@@ -17,6 +17,8 @@ Built your own harness or a workflow that works? Add a row: open a PR that adds 
 
 How to choose: [docs/choose-a-harness.md](docs/choose-a-harness.md). The one-download plan for newcomers: [docs/zao-orca.md](docs/zao-orca.md).
 
+Guard wiring check: every PR gets a warning if it adds a `bin/*guard*` or `bin/*-warn` script that no hook or test runs. See [docs/guard-wiring-check.md](docs/guard-wiring-check.md).
+
 ## What would you want in your ideal harness?
 That is the question this repo started from. Open an issue with your answer: the tools you wish every session started with, the rules that saved you, the skills you keep rewriting. Plan: [ZAOresearch doc 1969](https://github.com/ZAODEVZ/ZAOresearch/pull/30).
 

@@ -1,0 +1,14 @@
+name: guard-wiring
+on:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Self-test
+        run: bash tests/guard-wiring-check.test.sh
+      - name: Warn on unwired guards
+        run: bash scripts/guard-wiring-check.sh "origin/${{ github.base_ref }}"
