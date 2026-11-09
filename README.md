@@ -17,8 +17,6 @@ Built your own harness or a workflow that works? Add a row: open a PR that adds 
 
 How to choose: [docs/choose-a-harness.md](docs/choose-a-harness.md). The one-download plan for newcomers: [docs/zao-orca.md](docs/zao-orca.md).
 
-Claims paths check: flags paths a PR description names that the PR never touches, and skips scoped package names like `@scope/name`. See [docs/claims-paths.md](docs/claims-paths.md).
-
 ## What would you want in your ideal harness?
 That is the question this repo started from. Open an issue with your answer: the tools you wish every session started with, the rules that saved you, the skills you keep rewriting. Plan: [ZAOresearch doc 1969](https://github.com/ZAODEVZ/ZAOresearch/pull/30).
 
@@ -29,6 +27,8 @@ Whatever harness you pick, these files make the agent follow The ZAO's rules. Cl
 - Mac / Linux: `../zao-harness/scripts/install.sh`
 
 It copies `CLAUDE.md`, `AGENTS.md` and `.claude/skills/` into that repo (it never overwrites a file that is already there).
+
+Claims paths check: flags paths a PR description names that the PR never touches, and skips scoped package names like `@scope/name`. See [docs/claims-paths.md](docs/claims-paths.md).
 
 ## Contact
 The ZAO: info@thezao.com. MIT licensed, see LICENSE.
