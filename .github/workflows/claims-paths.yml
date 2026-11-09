@@ -1,0 +1,13 @@
+name: claims-paths
+on:
+  pull_request:
+    paths:
+      - scripts/claims-paths.sh
+      - tests/claims-paths.test.sh
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test
+        run: bash tests/claims-paths.test.sh
