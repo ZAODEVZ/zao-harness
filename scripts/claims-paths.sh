@@ -33,6 +33,16 @@ claimed_tokens() {
   grep -o '`[^`[:space:]]\+`' | tr -d '`' | grep -E '/|\.[A-Za-z0-9]{1,6}$' | sort -u
 }
 
+# True when a touched file sits under folder $1. Plain string compare: the
+# token comes from the PR body, so [ ] * ^ \ in it must never act as a pattern.
+folder_touched() {
+  local prefix="$1/" f
+  while IFS= read -r f; do
+    [ "${f:0:${#prefix}}" = "$prefix" ] && return 0
+  done <<< "$2"
+  return 1
+}
+
 claims_main() {
   local base="${1:-}"; local body="${2:-/dev/stdin}"
   if [ -z "$base" ] || ! git rev-parse --verify -q "$base" >/dev/null; then
@@ -46,7 +56,7 @@ claims_main() {
     if is_scoped_package_ref "$tok"; then continue; fi
     tok="${tok#./}"; tok="${tok%/}"
     # Touched if it is a changed file, or a folder that holds a changed file.
-    if grep -qxF -- "$tok" <<< "$touched" || grep -q -- "^${tok//./\\.}/" <<< "$touched"; then continue; fi
+    if grep -qxF -- "$tok" <<< "$touched" || folder_touched "$tok" "$touched"; then continue; fi
     echo "$tok"; bad=1
   done < <(claimed_tokens < "$body")
   return $bad

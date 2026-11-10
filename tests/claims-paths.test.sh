@@ -36,4 +36,12 @@ git checkout -q main; git merge -q --ff-only pr 2>/dev/null; git checkout -q -b 
 echo y > src/lib/b.ts; git commit -qam other
 expect "scoped name that exists in tree is still checked" 1 "@acme/ui" 'Edited `@acme/ui` and `src/lib/b.ts`.'
 
+# Folder tokens are compared as plain strings, never as a pattern (PR 4 verdict).
+mkdir -p ab; echo f > ab/f; git add .; git commit -qm ab
+expect "two-letter folder holding a touched file passes" 0 "" 'Work is in `ab/`.'
+expect "brackets in a folder token are literal" 1 "a[b]" 'Work is in `a[b]/`.'
+expect "star in a folder token is literal" 1 "a*" 'Work is in `a*/`.'
+expect "caret in a folder token is literal" 1 "^ab" 'Work is in `^ab/`.'
+expect "dot in a folder token is literal" 1 "a." 'Work is in `a./`.'
+
 exit $fail
