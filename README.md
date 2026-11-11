@@ -28,5 +28,7 @@ Whatever harness you pick, these files make the agent follow The ZAO's rules. Cl
 
 It copies `CLAUDE.md`, `AGENTS.md` and `.claude/skills/` into that repo (it never overwrites a file that is already there).
 
+Claims paths check: flags paths a PR description names that the PR never touches, and skips scoped package names like `@scope/name`. See [docs/claims-paths.md](docs/claims-paths.md).
+
 ## Contact
 The ZAO: info@thezao.com. MIT licensed, see LICENSE.
