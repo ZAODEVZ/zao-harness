@@ -30,5 +30,14 @@ It copies `CLAUDE.md`, `AGENTS.md` and `.claude/skills/` into that repo (it neve
 
 Claims paths check: flags paths a PR description names that the PR never touches, and skips scoped package names like `@scope/name`. See [docs/claims-paths.md](docs/claims-paths.md).
 
+## Skills worth installing on day one
+Public skill repos that fit ZAO work, picked in [ZAOresearch doc 2477](https://github.com/ZAODEVZ/ZAOresearch/tree/main/research/dev-workflows/2477-five-reddit-links-12-nov-agent-repos-shortcuts-skills-starwire-zaowire). Each is a folder you drop into `.claude/skills/` (or the Codex equivalent).
+
+| Skill repo | What it gives the agent | Use it on |
+|---|---|---|
+| [anthropics/skills](https://github.com/anthropics/skills) | The Word, PDF, PowerPoint and Excel skills behind Claude's document tools | Any doc, deck or sheet a ZAO repo produces |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | 40+ React and Next.js performance rules ranked by impact, 100+ UI checks, a Vercel deploy skill | zao-website, Sparkz, every Next.js repo |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Design commands for a coding agent: critique, audit, polish, bolder, quieter | Any screen that "looks bad" before a redesign |
+
 ## Contact
 The ZAO: info@thezao.com. MIT licensed, see LICENSE.
